@@ -10,3 +10,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: "Login to Docker hub"
         run: docker login --username ${{secrets.DOCKER_USERNAME}} --password ${{secrets.TOKEN}} 
+      - name: "Bulid docker image"
+        run: docker bulid -t ${{secrets.DOCKER_USERNAME}}/myimage .
